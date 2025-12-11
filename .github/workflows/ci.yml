@@ -40,7 +40,6 @@ jobs:
       with:
         # We have already installed dependencies and built the app
         install: false
-        build: false
         start: false
         # Just run the tests
         command: yarn cypress run
