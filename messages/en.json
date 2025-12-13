@@ -1,5 +1,15 @@
 {
-    "HomePage": {
-        "title": "Hello world!"
+    "Login": {
+        "title": "Login",
+        "description": "Enter your credentials to access your account",
+        "usernamePlaceholder": "User",
+        "usernameHelp": "Enter your email, CPF or passport.",
+        "passwordPlaceholder": "Password",
+        "rememberMe": "Remember me",
+        "forgotPassword": "Forgot password",
+        "submit": "Sign In",
+        "submitting": "Signing In...",
+        "error": "Error logging in. Check your credentials.",
+        "unexpectedError": "An unexpected error occurred."
     }
 }

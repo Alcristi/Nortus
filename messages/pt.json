@@ -1,0 +1,15 @@
+{
+    "Login": {
+        "title": "Login",
+        "description": "Entre com suas credenciais para acessar a sua conta",
+        "usernamePlaceholder": "Usuário",
+        "usernameHelp": "Insira o seu e-mail, CPF ou passaporte.",
+        "passwordPlaceholder": "Senha",
+        "rememberMe": "Lembrar meu usuário",
+        "forgotPassword": "Esqueci minha senha",
+        "submit": "Entrar",
+        "submitting": "Entrando...",
+        "error": "Erro ao fazer login. Verifique suas credenciais.",
+        "unexpectedError": "Ocorreu um erro inesperado."
+    }
+}
