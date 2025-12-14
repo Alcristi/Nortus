@@ -1,5 +1,4 @@
 
-import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState, useTransition } from "react";
 import { toast } from "sonner";
@@ -7,7 +6,6 @@ import { loginSchema } from "../schema/loginSchema";
 import { LoginService } from "../types";
 
 export function useLogin(loginService: LoginService) {
-    const locale = useLocale();
     const router = useRouter()
     const [isPending, startTransition] = useTransition();
     const [remember, setRemember] = useState(false);
@@ -51,7 +49,7 @@ export function useLogin(loginService: LoginService) {
         startTransition(async () => {
             try {
                 await loginService.executeLogin(data);
-                router.push(`/${locale}/dashboard`)
+                router.push(`/dashboard`)
             } catch (err) {
                 toast.error('Login failed');
             }
