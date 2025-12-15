@@ -52,10 +52,9 @@ export function useLogin(loginService: LoginService) {
             try {
                 await loginService.executeLogin(data);
                 router.push(`/${locale}/dashboard`)
-            } catch (err) {
-                toast.error('Login failed');
+            } catch {
+                toast.error('Ocorreu um erro ao realizar o login');
             }
-
         });
     };
 

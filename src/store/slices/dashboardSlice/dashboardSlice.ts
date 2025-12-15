@@ -20,6 +20,7 @@ export const createDashboardSlice = (
 
   async fetchDashboardData() {
     if (!Object.keys(get().dashboard.data.raw).length) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const response = await httpClient.sendRequest<any, DashboardData>({
         endpoint: '/api/dashboard',
         method: 'GET',

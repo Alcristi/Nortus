@@ -26,7 +26,7 @@ export default function Page() {
     setIsLoadig(true)
     fetchDashboardData()
     setIsLoadig(false)
-  }, [])
+  }, [fetchDashboardData])
 
 
   return (

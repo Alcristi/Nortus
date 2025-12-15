@@ -13,10 +13,7 @@ import { useTranslations } from "next-intl";
 import { useLogin } from "../hook/useLogin";
 import loginService from "../services/loginService";
 
-export function LoginForm({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+export function LoginForm() {
   const content = useTranslations('Login');
 
   const { handleSubmit, isPending, handleRememberChange, remember, usernameRef } = useLogin(loginService)

@@ -4,6 +4,7 @@ import { DashboardData } from "./types";
 
 export function createDashboardNortusService(httpClient: HttpClient, getToken: () => Promise<string>) {
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     async function getDashboardData(): Promise<any> {
         const token = await getToken();
 
