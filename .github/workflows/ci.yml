@@ -8,6 +8,8 @@ jobs:
   test_and_lint:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      URL_NORTUS_API: ${{ vars.URL_NORTUS_API }}
 
     steps:
     - uses: actions/checkout@v4
