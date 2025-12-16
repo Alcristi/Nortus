@@ -29,18 +29,10 @@ jobs:
     - name: Build
       run: yarn build
 
-    - name: Start Application
-      run: yarn start &
-      env:
-        PORT: 3000
-
-    - name: Wait for localhost:3000
-      run: npx wait-on http://localhost:3000
-
     - name: Run Cypress Tests
       uses: cypress-io/github-action@v6
       with:
-        # We have already installed dependencies and built the app
         install: false
-        # Just run the tests
+        start: yarn start
+        wait-on: 'http://localhost:3000'
         command: yarn cypress run
