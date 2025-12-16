@@ -1,18 +1,9 @@
 describe('Navigation', () => {
   it('should navigate to the about page', () => {
-    // Start from the index page
-    cy.visit('http://localhost:3000/')
+    // Visit the specific login page
+    cy.visit('http://localhost:3000/pt/login')
 
-    // Find a link with an href attribute containing "about" and click it
-    // cy.get('a[href*="about"]').click()
-
-    // The new url should include "/about"
-    // cy.url().should('include', '/about')
-
-    // The new page should contain an h1 with "About Page"
-    // cy.get('h1').contains('About Page')
-    
-    // Check for Hello world (translation)
-    cy.get('h1').should('exist')
+    // Check for username input to ensure form loaded
+    cy.get('input[name="username"]').should('exist')
   })
 })

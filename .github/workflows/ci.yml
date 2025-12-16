@@ -8,6 +8,8 @@ jobs:
   test_and_lint:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      URL_NORTUS_API: ${{ vars.URL_NORTUS_API }}
 
     steps:
     - uses: actions/checkout@v4
@@ -27,18 +29,10 @@ jobs:
     - name: Build
       run: yarn build
 
-    - name: Start Application
-      run: yarn start &
-      env:
-        PORT: 3000
-
-    - name: Wait for localhost:3000
-      run: npx wait-on http://localhost:3000
-
     - name: Run Cypress Tests
       uses: cypress-io/github-action@v6
       with:
-        # We have already installed dependencies and built the app
         install: false
-        # Just run the tests
+        start: yarn start
+        wait-on: 'http://localhost:3000'
         command: yarn cypress run
